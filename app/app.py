@@ -31,7 +31,6 @@ st.markdown("""
 - Debug **real infrastructure failures** (memory, disk, quota, tokens, checkpoints)
 - Deliver a **working interactive app** (Streamlit + PyTorch + GradCAM)
 """)
-
 # ==================== SIDEBAR ====================
 st.sidebar.header("⚙️ Model Settings")
 threshold = st.sidebar.slider("Decision Threshold (higher = more conservative)", 0.1, 0.9, 0.7, 0.05)
