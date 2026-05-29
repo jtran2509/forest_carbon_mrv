@@ -1,4 +1,4 @@
-# Forest Carbon Mapper – A Battle-tested cloud ML pipeline with a flawed model (but a great story)
+# Forest Carbon Mapper – A Battle-tested cloud ML pipeline with a flawed model!
 
 ![Status](https://img.shields.io/badge/status-archived-lightgrey?style=flat-square)
 ![AWS](https://img.shields.io/badge/AWS-SageMaker%20%7C%20S3%20%7C%20EC2-orange?style=flat-square&logo=amazon-aws)
