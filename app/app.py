@@ -204,7 +204,7 @@ def load_model():
     # model.to(device)
     # model.eval()
     # return model, device
-    """Tải model từ Google Drive (chỉ tải 1 lần, cache lại)"""
+    """Download model from Google Drive (only once, next time will re-cache)"""
     
     # Kiểm tra nếu file chưa tồn tại thì tải về
     if not os.path.exists(MODEL_PATH):
@@ -301,20 +301,19 @@ with col2:
 with col3:
     st.image(mask_pred * 255, caption=f"Prediction (threshold={threshold})", use_container_width=True)
 
-st.metric("🎯 Dice Score (on this sample)", f"{dice:.3f}", 
-          help="Dice score = 0.89 on validation set. Here it's lower due to model limitations.")
-st.info("💡 The high‑scoring validation Dice (0.89) was achieved during training but lost due to a checkpoint issue. "
-        "This demo uses a lightweight inference version, which explains the over‑prediction.")
+st.metric("🎯 Dice Score (on this sample)", f"{dice:.3f}")
+st.info("💡 Dice Score is low but the model was trained on 29 images, can definitely improve once scaling up.")
 
 st.markdown("---")
 st.subheader("📁 What You Can Take Away")
 st.markdown("""
-- **Proven ability to handle 600GB+ satellite data** (ingestion, processing, tiling)  
-- **End‑to‑end cloud ML pipeline** (AWS S3, SageMaker, EC2, Docker)  
-- **Transparent communication** of technical challenges and realistic limitations  
-- **Ready for production** – the pipeline is reusable; the model can be re‑trained with proper checkpointing in one week  
+* Ingestion: Download Sentinel-2 L2A images and ESA WorldCover forest masks (4 bands, 3 tropical regions)
+* Preprocessing: Tile 256x256 chips with 4 spectral bands (B02, B03, B04, B08)
+* Training: Attention U-Net with class balancing, hard negative mining, and mixed precision
+* Deployment: **interactive demo** (Streamlit) for demo and visualization 
+* *Ready for production*: the pipeline is reusable; the model can be re‑trained with proper checkpointing in one week  
 
-> *The real value of this project is not a perfect mask, but a **battle‑tested infrastructure** ready for real‑world forestry monitoring.*
+> **Real-world impact:** Automates forest cover monitoring for carbon credit verification. 
 """)
 
 # ==================== INSTRUCTIONS ====================
