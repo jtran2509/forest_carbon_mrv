@@ -22,14 +22,13 @@ st.set_page_config(page_title="Forest Carbon Mapper - Portfolio Project", layout
 # ==================== HEADER WITH HONEST INTRO ====================
 st.title("🌳 Forest Carbon Mapper")
 st.markdown("""
-### 🔥 What This Demo Actually Proves
-
-**This is not a perfect model. It is proof that I can:**
-
-- Process **600GB of satellite data** (ingest, tile, store on AWS)
-- Build an **end‑to‑end ML pipeline** on SageMaker (training, processing, deployment)
-- Debug **real infrastructure failures** (memory, disk, quota, tokens, checkpoints)
-- Deliver a **working interactive app** (Streamlit + PyTorch + GradCAM)
+### 🔥 Monitoring - Reporting - Verification Platform:     
+This project buils a *forest carbon monitoring pipeline* on AWS SageMaker, processing 600GB+ of Sentinel-2 satellite imagery to generate forest segmentation masks.
+- How does carbon credit help - why don't we just plant tree?
+    - The biggest threat to tropical forests right now is deforestation – trees being cut down and burned. 
+    - When we burn a forest, all the carbon stored in those trees is released into the atmosphere immediately. 
+    - This model helps **monitor those protected forest**, proving the trees are standing tall & strong.
+> By paying a forest community not to cut down their trees/protect a forest from illegal logging, you are preventing a massive, instant release of CO₂. 
 """)
 # ==================== SIDEBAR ====================
 st.sidebar.header("⚙️ Model Settings")
@@ -271,10 +270,10 @@ def load_npy_from_bytes(content):
 st.subheader("📊 Demo with Ground Truth (What the Model Should Do)")
 
 sample_options = {
-    "Amazon - Chip 10": {"image": "sample_data/sample_chips/chip_10.npy", "mask_true": "sample_data/sample_masks/mask_10.npy"},
-    "Amazon - Chip 100": {"image": "sample_data/sample_chips/chip_100.npy", "mask_true": "sample_data/sample_masks/mask_100.npy"},
-    "Amazon - Chip 1000": {"image": "sample_data/sample_chips/chip_1000.npy", "mask_true": "sample_data/sample_masks/mask_1000.npy"},
-    "Amazon - Chip 1001": {"image": "sample_data/sample_chips/chip_1001.npy", "mask_true": "sample_data/sample_masks/mask_1001.npy"},
+    "Vietnam - Chip 00002": {"image": "sample_data/sample_chips/chip_00002_img.npy", "mask_true": "sample_data/sample_masks/chip_00002_mask.npy"},
+    "Vietnam - Chip 00003": {"image": "sample_data/sample_chips/chip_00003_img.npy", "mask_true": "sample_data/sample_masks/chip_00003_mask.npy"},
+    "Vietnam - Chip 00021": {"image": "sample_data/sample_chips/chip_00021_img.npy", "mask_true": "sample_data/sample_masks/chip_00021_mask.npy"},
+    "Vietnam - Chip 00024": {"image": "sample_data/sample_chips/chip_00024_img.npy", "mask_true": "sample_data/sample_masks/chip_00024_mask.npy"},
 }
 
 selected = st.selectbox("Choose a demo sample:", list(sample_options.keys()))
