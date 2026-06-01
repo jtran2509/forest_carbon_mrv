@@ -208,7 +208,7 @@ def load_model():
     
     # Kiểm tra nếu file chưa tồn tại thì tải về
     if not os.path.exists(MODEL_PATH):
-        with st.spinner("Đang tải model (lần đầu sẽ chậm, lần sau sẽ nhanh hơn)..."):
+        with st.spinner("Model's loading (first time will be slow, next time will be faster)..."):
             gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
     
     # 2. Load model
