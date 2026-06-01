@@ -12,7 +12,7 @@ import glob
 import io
 import gdown 
 
-FILE_ID = "1ec2bITHgFmAiU3m3Gt4akjRoFwmvpC12"  # Thay bằng ID thật của bạn
+FILE_ID = "1ec2bITHgFmAiU3m3Gt4akjRoFwmvpC12"
 MODEL_URL = f"https://drive.google.com/uc?id={FILE_ID}" 
 MODEL_PATH = "checkpoint_epoch_049.pth"
 
