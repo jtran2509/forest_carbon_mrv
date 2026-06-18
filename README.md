@@ -8,6 +8,7 @@
 
 # Demo link: [Forest Carbon Mapper](https://forestcarbonmrv.streamlit.app/)
 **An end-to-end ML pipeline for forest carbon monitoring using Sentinel-2 satellite imagery, deployed on AWS SageMaker
+![Brain Tumor Classifier Demo](https://imgur.com/a/forest-project-demo-4S9iHR3)
 
 *> From Satellite to report: over 500GB of data, 472k chips, 0.8976 Val IoU, and a production-ready pipeline*
 ## 📋 Table of Contents
